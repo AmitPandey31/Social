@@ -18,9 +18,9 @@ import User from "./models/User.js";
 import Post from "./models/Post.js";
 import { users, posts } from "./data/index.js";
 
-header('Access-Control-Allow-Origin: *');
-header('Access-Control-Allow-Methods: POST,GET,OPTIONS, PUT, DELETE');
-header('Access-Control-Allow-Headers: Content-Type, X-Auth-Token, Origin, Authorization');
+// header('Access-Control-Allow-Origin: *');
+// header('Access-Control-Allow-Methods: POST,GET,OPTIONS, PUT, DELETE');
+// header('Access-Control-Allow-Headers: Content-Type, X-Auth-Token, Origin, Authorization');
 
 /* CONFIGURATIONS */
 const __filename = fileURLToPath(import.meta.url);
@@ -33,13 +33,7 @@ app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
 app.use(morgan("common"));
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
-app.use(cors(
-  {
-    origin: ["https://social-frontend-pi.vercel.app/"],
-    methods: ["POST","GET"],
-    credentials: true
-  }
-));
+app.use(cors( ));
 app.use("/assets", express.static(path.join(__dirname, "public/assets")));
 
 /* FILE STORAGE */
