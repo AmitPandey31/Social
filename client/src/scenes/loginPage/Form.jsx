@@ -64,7 +64,7 @@ const Form = () => {
     formData.append("picturePath", values.picture.name);
 
     const savedUserResponse = await fetch(
-      "https://social-backend-two.vercel.app/register",
+      "https://social-backend-two.vercel.app/auth/register",
       {
         method: "POST",
         body: formData,
